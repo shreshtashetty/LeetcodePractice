@@ -1,0 +1,18 @@
+# 763. Partition Labels
+
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        end_in = 0
+        start=0
+        lengths = []
+        for i in range(len(s)):
+            for j in range(len(s)-1, i, -1):
+                if s[i]==s[j] and j>end_in:
+                    end_in = j
+            if i==end_in:
+                l = len(s[start:end_in+1])
+                lengths.append(l)
+                start = end_in+1
+                end_in+=1
+        return lengths
+                
