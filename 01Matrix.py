@@ -2,6 +2,7 @@
 
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+        
         ROWS, COLUMNS = len(mat), len(mat[0])
         grid = [[0 for _ in range(COLUMNS)] for _ in range(ROWS)] 
         queue = deque()
@@ -14,6 +15,7 @@ class Solution:
                     visited[row][column] = True
            
         while queue:
+            
             row, column, distance = queue.popleft()
             for x, y in [(-1, 0), (0, -1), (0, 1), (1, 0)]:
                 r, c = row + x, column + y
