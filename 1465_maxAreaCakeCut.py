@@ -1,4 +1,5 @@
 # 1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cut
+
 class Solution:
     def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:
         horizontalCuts.append(0)
