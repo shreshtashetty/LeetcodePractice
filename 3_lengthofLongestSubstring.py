@@ -16,7 +16,6 @@ class Solution:
             return 1
         
         p1 = 0
-        p2 = p1+1
         l = 0
         hashmap = {}
         
@@ -26,18 +25,16 @@ class Solution:
             
             if len(sub)!=len(set(sub)):
                 p1 = hashmap[s[i-1]]+1
-                hashmap[s[i-1]] = i-1
                 sub = s[p1:i]
-            else:
-                hashmap[s[i-1]] = i-1
+     
+            hashmap[s[i-1]] = i-1
             
             if len(sub)==len(set(sub)):
-                if len(sub)>l:
-                    l = len(sub)
+                l = max(l, len(sub))
+                    
         return l
     
-#         # ANOTHER SOLUTION (MY OLD ONE)   
-
+#         # ANOTHER SOLUTION (MY OLD ONE)                    
 #         seq=''
 #         # seqs=[]
 #         max_len = 0
