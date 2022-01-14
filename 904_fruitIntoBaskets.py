@@ -24,9 +24,8 @@ class Solution:
                     if arr[j]!=temp:
                         break
                         
-                arr = arr[j+1:]
-                fruit_set = set(arr+[fruits[i]])
-                arr = arr+[fruits[i]]
+                arr = arr[j+1:]+[fruits[i]]
+                fruit_set = set(arr)
         
                 
             elif fruits[i] in fruit_set:
