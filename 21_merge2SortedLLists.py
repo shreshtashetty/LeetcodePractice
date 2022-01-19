@@ -38,15 +38,7 @@ class Solution:
                 
       
         if p1 or p2:        
-            if p1:
-                rem = p1
-            elif p2:
-                rem = p2
-
-            while rem:
-                p_list.next = ListNode(rem.val)
-                p_list = p_list.next
-                rem = rem.next
+            p_list.next = p1 or p2
 
         return l.next
                 
