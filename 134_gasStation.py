@@ -11,14 +11,12 @@ class Solution:
             return -1
         
         start = 0
-        
-        diff = [gas[i]-cost[i] for i in range(len(cost))]
         total = 0
         
-        for i in range(len(diff)):
-            total+=diff[i]
+        for i in range(len(cost)):
+            total+=gas[i]-cost[i]
             if total<0:
-                if i<len(diff)-1:
+                if i<len(cost)-1:
                     start = i+1
                 else:
                     start = 0
