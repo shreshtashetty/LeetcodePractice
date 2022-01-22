@@ -23,6 +23,6 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         arr = []
-        backtrack(sorted(candidates), target, res, arr)
+        backtrack(candidates, target, res, arr)
         return res
         
