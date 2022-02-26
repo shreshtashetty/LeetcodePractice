@@ -36,5 +36,4 @@ class Solution:
                         if max_area<area:
                             max_area = area
         return max_area
-                        
-        
+    
