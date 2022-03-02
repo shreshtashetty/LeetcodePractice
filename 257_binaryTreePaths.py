@@ -33,3 +33,4 @@ class Solution:
         if root.right:
             traverse(root.right, current_path, result)
         return result
+
