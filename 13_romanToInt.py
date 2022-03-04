@@ -50,3 +50,4 @@ class Solution:
                 num+=1000
                 i+=1
         return num
+    
