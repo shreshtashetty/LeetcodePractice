@@ -5,28 +5,19 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         
-        count = {}
-        letters = set(s)
-        for i in letters:
-            count[i] = 0
+        l = 0
         
-        p1 = 0
-        maxlen = 0
+        count = {}
+        res = 0
         
         for i in range(len(s)):
             
-            count[s[i]]+=1
+            count[s[i]] = 1 + count.get(s[i], 0)
             
-            max_cnt = max(count.values())
+            while (i-l+1)-max(count.values())>k:
+                count[s[l]]-=1
+                l+=1
             
-            num_repl = len(s[p1:i+1])-max_cnt
+            res = max(res, i-l+1)
             
-            if num_repl<=k and len(s[p1:i+1])>maxlen:
-                maxlen = len(s[p1:i+1])
-            
-            if num_repl>k:
-                count[s[p1]]-=1
-                p1+=1
-        
-        return maxlen
-                
+        return res
