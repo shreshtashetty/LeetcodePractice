@@ -3,9 +3,21 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         
-        ans = [-1]*len(nums1)
-        
         hash_map = {}
+        stack = []
+        
+        for n in nums2:
+            while stack and stack[-1]<n:
+                hash_map[stack.pop()] = n
+                
+            stack.append(n)
+            
+        for i, n in enumerate(nums1):
+            nums1[i] = hash_map.get(n, -1)
+            
+        return nums1
+        
+        '''
         
         for i, n in enumerate(nums2):
             
@@ -21,6 +33,10 @@ class Solution:
                 ind+=1
                 
             if ind<=len(nums2) and great>n:
-                ans[i] = great
+                nums1[i] = great
+            else:
+                nums1[i] = -1
                 
-        return ans
+        return nums1
+        
+        '''
