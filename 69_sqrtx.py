@@ -13,15 +13,15 @@ class Solution:
         while(l<=r):
             
             mid = l + (r-l)//2
-            mid_sq = mid*mid
+            x_sqrt = x//mid
             
-            if mid_sq==x:
+            if mid==x_sqrt:
                 return mid
             
-            if mid_sq<x:
-                l = mid+1
-                ans = mid # floor value used in case number has no integer square root. 
+            if mid<x_sqrt:
+                l = mid+1 
             else:
                 r = mid-1
+                ans = x_sqrt # floor value used in case number has no integer square root.
                 
         return ans
